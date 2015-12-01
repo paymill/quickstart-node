@@ -16,7 +16,7 @@ router.post('/payment', function (req, res) {
   pm = paymill.getContext("<PAYMILL_PRIVATE_KEY>");
 
   pm.transactions.createWithToken(token, amount, currency, description).then(function(transaction) {
-  	res.render('kitten', { title: 'PAYMILL - Thank You!' });
+  	res.render('content', { title: 'PAYMILL - Thank You!' });
   }, function(error) {
     res.send('Something went wrong. The transaction could not be created');
   });
